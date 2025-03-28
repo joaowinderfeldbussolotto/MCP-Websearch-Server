@@ -8,6 +8,16 @@ This is a simple MCP (Model Context Protocol) server for retrieving information 
 -   **MCP Compatibility:** Implements an MCP server, allowing it to be easily integrated with other MCP-compatible applications.
 -   **Simple Tool:** Exposes a `get_docs` tool that accepts a query and library name, returning relevant documentation snippets.
 
+## How It Works
+
+```mermaid
+graph LR
+    Client[MCP Client] -->|Calls tools| Server[MCP Server]
+    Server -->|Searches web for docs| Serper[Serper API]
+    Serper -->|Returns search results| Server
+    Server -->|Returns documentation| Client
+```
+
 ## Setup
 
 1.  **Install Dependencies:**
@@ -29,7 +39,7 @@ This is a simple MCP (Model Context Protocol) server for retrieving information 
 3.  **Run the Server:**
 
     ```bash
-    uv server/main.py
+    uv run server/main.py
     ```
 
 
