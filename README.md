@@ -18,28 +18,51 @@ graph LR
     Server -->|Returns documentation| Client
 ```
 
-## Setup
+## Getting Started
 
-1.  **Install Dependencies:**
+### Installing uv Package Manager
 
-    ```bash
-    pip install python-dotenv mcp
-    ```
+**On MacOS/Linux:**
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
 
-2.  **Environment Variables:**
+Make sure to restart your terminal afterwards to ensure that the `uv` command gets picked up.
 
-    Create a `.env` file in the root directory and add the following:
+### Project Setup
 
-    ```
-    SERPER_API_KEY=YOUR_SERPER_API_KEY
-    ```
+Create and initialize the project:
+```bash
+# Create a new directory for our project
+uv init mcp-server
+cd mcp-server
 
-    You'll need a SERPER API key to use the web search functionality. You can obtain one from [Serper.dev](https://serper.dev/). We are using the Serper API to search the web for relevant documentation.
+# Create virtual environment and activate it
+uv venv
+source .venv/bin/activate  # On Windows use: .venv\Scripts\activate
 
-3.  **Run the Server:**
+# Install dependencies
+uv add "mcp[cli]" httpx python-dotenv bs4
+```
 
-    ```bash
-    uv run server/main.py
-    ```
+
+### Environment Variables
+
+Create a `.env` file in the root directory and add the following:
+
+```
+SERPER_API_KEY=YOUR_SERPER_API_KEY
+```
+
+You'll need a SERPER API key to use the web search functionality. You can obtain one from [Serper.dev](https://serper.dev/). We are using the Serper API to search the web for relevant documentation.
+
+### Running the Server
+
+Start the MCP server:
+```bash
+uv run main.py
+```
+
+The server will start and be ready to accept connections.
 
 
