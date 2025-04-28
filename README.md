@@ -1,5 +1,7 @@
 ## MPC Docs Server
 
+[![smithery badge](https://smithery.ai/badge/@joaowinderfeldbussolotto/MCP-Websearch-Server)](https://smithery.ai/server/@joaowinderfeldbussolotto/MCP-Websearch-Server)
+
 This is a simple MCP (Model Context Protocol) server for retrieving information from the official documentation of Langchain, Llama Index, and OpenAI. It provides a tool that can be used by MCP-compatible applications to search and retrieve relevant documentation snippets.
 
 ## Features
@@ -19,6 +21,14 @@ graph LR
 ```
 
 ## Getting Started
+
+### Installing via Smithery
+
+To install Documentation Retrieval Server for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@joaowinderfeldbussolotto/MCP-Websearch-Server):
+
+```bash
+npx -y @smithery/cli install @joaowinderfeldbussolotto/MCP-Websearch-Server --client claude
+```
 
 ### Installing uv Package Manager
 
@@ -64,5 +74,3 @@ uv run main.py
 ```
 
 The server will start and be ready to accept connections.
-
-
